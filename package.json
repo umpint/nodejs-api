@@ -1,0 +1,29 @@
+{
+  "name": "umpint-nodejs-api",
+  "version": "0.1.0",
+  "description": "A sample Node.js app for sending signatures to umpint.com",
+  "main": "sign.js",
+  "scripts": {
+    "start": "nodejs sign.js your_url your_private_key_file the_file_to_sign"
+  },
+  "dependencies": {
+    "node-forge": "^0.9.1"
+  },
+  "engines": {
+    "node": "10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umpint/nodejs-api"
+  },
+  "keywords": [
+    "nodejs",
+    "umpint",
+    "authentication"
+  ],
+  "author": "Robin Owens",
+  "contributors": [
+    "Robin Owens <robin.owens@umpint.com> (http://umpint.com)"
+  ],
+  "license": "Apache 2.0"
+}
