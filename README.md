@@ -30,9 +30,9 @@ npm update
 
 ### Running
 
-We have at dummybank.rowit.co.uk a dummy site you can use for testing. Since we only use if for testing we allow you to download the Certificate Private Key. Nobody should normally every allow this - as makes https pointless.
+We have at dummybank.co.uk a dummy site you can use for testing. Since we only use if for testing we allow you to download the Certificate Private Key. Nobody should normally every allow this - as makes https pointless.
 
-You can download from: dummybank.rowit.co.uk/key.pem 
+You can download from: dummybank.co.uk/notnormallypublic/privkey.pem 
 
 Note this file changes every few months so you may have to download again if you start getting certificate errors.
 
@@ -40,19 +40,19 @@ Place this file in the bash-api directory.
 
 To sign an individual file run:
 ```
-wget https://dummybank.rowit.co.uk/key.pem
+wget https://dummybank.co.uk/notnormallypublic/privkey.pem 
 # 1st edit the file testfile.sh and make random change to it so it is unique
-nodejs sign.js dummybank.rowit.co.uk ./key.pem testfile.txt
+nodejs sign.js dummybank.co.uk ./privkey.pem testfile.txt
 ```
 
 you should then see output like this:
 
 ```
-myArgs:  [ 'dummybank.rowit.com', './key.pem', 'testfile.txt' ]
+myArgs:  [ 'dummybank.co.uk', './privkey.pem', 'testfile.txt' ]
 sending hash: 2804fbcd69ab84e985955431a5dcdb20b0d999be2bf9e90280cdf030e94c15dc signature: eJjT99Tm52IDe8s~K9agRvTz2t7EmJYWjV5pOGyUEaAg4m8XZXmyg5fPbN7hFK64SHKIcdLheovr4-svsqx6USlr0rsaZODAAZ8Nv4habUIw~cZgVQ1adKjeF4lEqVUBlcepYbukkiI1dLs2dOgBunVBaLXY8POrTCKrFNEcw5udwGC~hUUTvKKxGYwFU3sn3mCCZQIReQ57UjFBJ7rScJaRAqJdfQSzEbqs9Zz-byUEYLEfqYdXLePzrryDqT3~SmxmhnsLKBHzBpYXY630D92ZETqTj1yuGy57LIk0SbC9OXetYWKzDI4JeWk0TSh77aPUc2UPT5ncQzlNeYlrWg__
 
 Result:
-signed OK dummybank.rowit.co.uk 2804fbcd69ab84e985955431a5dcdb20b0d999be2bf9e90280cdf030e94c15dc eJjT99Tm52IDe8s/K9agRvTz2t7EmJYWjV5pOGyUEaAg4m8XZXmyg5fPbN7hFK64SHKIcdLheovr4+svsqx6USlr0rsaZODAAZ8Nv4habUIw/cZgVQ1adKjeF4lEqVUBlcepYbukkiI1dLs2dOgBunVBaLXY8POrTCKrFNEcw5udwGC/hUUTvKKxGYwFU3sn3mCCZQIReQ57UjFBJ7rScJaRAqJdfQSzEbqs9Zz+byUEYLEfqYdXLePzrryDqT3/SmxmhnsLKBHzBpYXY630D92ZETqTj1yuGy57LIk0SbC9OXetYWKzDI4JeWk0TSh77a 
+signed OK dummybank.co.uk 2804fbcd69ab84e985955431a5dcdb20b0d999be2bf9e90280cdf030e94c15dc eJjT99Tm52IDe8s/K9agRvTz2t7EmJYWjV5pOGyUEaAg4m8XZXmyg5fPbN7hFK64SHKIcdLheovr4+svsqx6USlr0rsaZODAAZ8Nv4habUIw/cZgVQ1adKjeF4lEqVUBlcepYbukkiI1dLs2dOgBunVBaLXY8POrTCKrFNEcw5udwGC/hUUTvKKxGYwFU3sn3mCCZQIReQ57UjFBJ7rScJaRAqJdfQSzEbqs9Zz+byUEYLEfqYdXLePzrryDqT3/SmxmhnsLKBHzBpYXY630D92ZETqTj1yuGy57LIk0SbC9OXetYWKzDI4JeWk0TSh77a 
 ```
 
 The "signed OK" signifies that the signature was correct and it was a new file.
